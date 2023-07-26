@@ -77,7 +77,7 @@ function sumWithTarget(arr, target) {
         }
     }
 
-    return [];
+    return 'there is no pair in this array';
 }
 
 const arr = [1, 3, 6, 7, 11, 15];
