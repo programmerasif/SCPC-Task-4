@@ -62,27 +62,28 @@ const result3 = frequentElement([0,1,2,3,4,5,5,5,5,5,5,6])
 console.log(`Task-3 result : ${result3}`);
 
 // Task 4
-function findTwoNumbersWithSum(arr, target) {
-  for (let left = 0, right = arr.length - 1; left < right; ) {
-    const sum = arr[left] + arr[right];
+function sumWithTarget(arr, target) {
+    let start = 0;
+    let end = arr.length - 1;
 
-    if (sum === target) {
-      return [left, right];
-    } else if (sum < target) {
-      left++;
-    } else {
-      right--;
+    for (start; start <= end;) {
+        const sum = arr[start] + arr[end];
+        if (sum === target) {
+            return [start, end];
+        } else if (sum < target) {
+            start++;
+        } else {
+            end--;
+        }
     }
-  }
 
-  return  'Does not found any pare'
+    return [];
 }
 
-
-const sortedArray = [1, 3, 6, 8, 11, 15];
-const targetValue = 9;
-const result = findTwoNumbersWithSum(sortedArray, targetValue);
-console.log(result);
+const arr = [1, 3, 6, 7, 11, 15];
+const target = 9;
+const result4 = sumWithTarget(arr, target);
+console.log(`Task-4 result : ${result4}`);
 
 // task 5
 const calculator = (num1,num2,operator) =>{
